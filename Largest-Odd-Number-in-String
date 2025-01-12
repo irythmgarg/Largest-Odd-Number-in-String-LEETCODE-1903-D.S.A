@@ -1,0 +1,19 @@
+class Solution {
+public:
+    // Function to find the largest odd number in a given string
+    string largestOddNumber(string num) {
+        int i = num.size() - 1; // Start from the last character of the string
+        
+        // Traverse the string from the end to find the last odd digit
+        while(i >= 0) {
+            if ((num[i] - '0') % 2 == 0) { // Check if the current digit is even
+                i--; // Move to the previous character
+            } else {
+                break; // Stop if an odd digit is found
+            }
+        }
+        
+        // Return the substring from the beginning to the last odd digit (inclusive)
+        return num.substr(0, i + 1);
+    }
+};
