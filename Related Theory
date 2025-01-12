@@ -1,0 +1,28 @@
+Theory Explanation:
+Iterating from the end:
+
+We traverse the string from the last character towards the first.
+This approach works because the largest odd number must end with the last odd digit. Any even digits at the end can be ignored.
+Checking for odd digits:
+
+A digit is odd if (digit - '0') % 2 != 0.
+If a character is even, we decrement i to move to the previous character.
+Returning the result:
+
+If an odd digit is found, the loop breaks, and the substring from index 0 to i (inclusive) is returned.
+If no odd digit is found (i == -1), an empty string is returned as there is no odd number in the input.
+Space Complexity:
+Auxiliary Space: The function uses constant extra space (O(1)) for the variable i.
+String Storage: The operation num.substr(0, i + 1) creates a new string for the result, but this is derived from the input string.
+Final Space Complexity: O(1) auxiliary space, but the input string's space is O(n), where n is the length of the string.
+Time Complexity:
+Traversing the string: The loop iterates through the string at most once from the last character to the first, which takes O(n) time, where n is the length of the string.
+
+Substring operation: The substr(0, i + 1) operation is O(k), where k is the size of the resultant substring. Since k ≤ n, it is bounded by O(n).
+
+Final Time Complexity: O(n), where n is the length of the input string.
+
+Overall Complexity:
+Time Complexity: O(n)
+Space Complexity: O(1) auxiliary space
+This solution is efficient as it processes the string in a single pass with constant auxiliary space.
